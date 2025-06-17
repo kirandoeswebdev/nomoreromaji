@@ -332,10 +332,8 @@ let scoreToAdd = 1;
 
 function getHint(kana_arr, hint_element, current_kana) {
   let kanaIndex = kana_arr.indexOf(current_kana);
-  let hintText = language == "english" ? "Hint: " : "示唆: ";
-
-  hintText +=
-    " " + kana_arr[Math.floor(kanaIndex / 5) * 5] + kana_arr[kanaIndex % 5];
+  let hintText =
+    kana_arr[Math.floor(kanaIndex / 5) * 5] + kana_arr[kanaIndex % 5];
 
   if (kanaIndex < 5) {
     hintText = hintText[1];
@@ -357,6 +355,8 @@ function getHint(kana_arr, hint_element, current_kana) {
   if (romajiHints) {
     hintText += ` ${romaji[kanaIndex]}`;
   }
+
+  hintText += language == "english" ? " - Hint" : " - 示唆";
 
   hint_element.innerHTML = hintText;
   hintElement.removeAttribute("hidden");
