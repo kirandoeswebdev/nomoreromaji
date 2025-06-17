@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap");
+
+/* Color Palette: https://coolors.co/c5fcf6-658fa4-586f7c-ddd0d5-d6ffd6 */
+
+body {
+  font-family: "Kosugi Maru", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body,
+html {
+  height: 100%;
+  background-color: #5b859a;
+}
+
+.main {
+  border: 1ch black solid;
+  padding: 10% 0;
+  width: 50%;
+  text-align: center;
+
+  background-color: #d6ffd6;
+  color: #2f4550;
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.main a {
+  color: #658fa4;
+
+  text-decoration-thickness: 2px;
+}
+
+/*.main a:visited {
+  color: #586f7c;
+}
+
+.main a:link {
+  color: #586f7c;
+}*/
+
+.main a:hover {
+  color: #456170;
+}
+
+.info_text {
+  margin: 0.25% 0 0.25% 0;
+}
+
+.main button {
+  font-family: "Kosugi Maru", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: larger;
+
+  border-radius: 5px;
+
+  font-size: x-large;
+
+  color: #2f4550;
+  background-color: #c5fcf6;
+}
+
+::selection {
+  background: #ddd0d5;
+  /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: #ddd0d5;
+  /* Gecko Browsers */
+}
+
+.kana_frm {
+  margin-top: 4%;
+  font-size: xx-large;
+}
+
+.kana_frm label:hover {
+  cursor: pointer;
+}
+
+.kana_frm input:checked + label {
+  color: #658fa4;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.kana_frm input + label::before {
+  content: "✗ ";
+}
+
+.kana_frm input:checked + label::before {
+  content: "✓ ";
+}
+
+.kana_frm input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.main > input {
+  color: #2f4550;
+  background-color: #ddd0d5;
+}
+
+.main > .option_button {
+  margin-bottom: 1.5%;
+  font-size: xx-large;
+}
+
+.main_header {
+  width: 100%;
+  height: 16%;
+
+  position: absolute;
+  top: 0;
+
+  background-color: #5b859a;
+}
+
+.main_header > span {
+  position: absolute;
+  top: 50%;
+
+  margin: 0;
+  width: 100%;
+
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  font-size: x-large;
+
+  color: #c5fcf6;
+
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.main_header > span > span {
+  width: auto;
+}
+
+.main_header > span > span:hover {
+  cursor: pointer;
+
+  color: #9efaef;
+}
+
+.cheat_sheet {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+
+  margin-top: 5%;
+  height: 100%;
+  text-align: center;
+}
+
+.cheat_sheet_box {
+  display: grid;
+  width: 100%;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>No More ローマ字!</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <span
+      id="info_header"
+      style="text-align: center; color: #d6ffd6; margin-top: 2.5%"
+    >
+      <h1 class="info_text">No More ローマ字!</h1>
+      <h2 class="info_text">
+        The カナ (kana) learning tool that doesn't use ローマ字 (romaji)
+      </h2>
+      <h3 class="info_text">
+        Try to get the highest score! Hints show カナ consonants in the -ア /
+        -あ form followed by the vowel. ★ indicates irregular pronounciation
+        (toggle in options)
+      </h3>
+    </span>
+
+    <div class="main" id="main_window">
+      <div class="main_header">
+        <span>
+          <span
+            style="text-align: left; margin-right: 25%"
+            onclick="setWindowOptions()"
+            >Options</span
+          ><span
+            style="text-align: right; margin-left: 25%"
+            onclick="setWindowCheatSheet()"
+            >Cheat Sheet
+          </span>
+        </span>
+      </div>
+
+      <h1 id="know_header" style="margin-bottom: 5%">
+        あなたは知っていますか ...
+      </h1>
+      <h1
+        id="char"
+        hidden="hidden"
+        style="margin: 0 0 5% 0; font-size: xx-large"
+      ></h1>
+      <h2 id="hint" hidden="hidden"></h2>
+
+      <button type="button" class="option_button" id="bYes" onclick="yes()">
+        はい
+      </button>
+      <span>&nbsp;</span>
+      <button type="button" class="option_button" id="bNo" onclick="no()">
+        いいえ
+      </button>
+      <br />
+      <button type="button" id="bNext" onclick="next()">次</button>
+      <button type="button" id="bHint" onclick="buttonGetHint()">
+        示唆を得る
+      </button>
+
+      <h1 id="score_text" style="margin: 5% 0 2% 0">
+        点数: <span id="score">0</span>
+      </h1>
+
+      <button type="button" id="bAdd" onclick="addOne()">1を追加</button>
+      <button type="button" id="bSub" onclick="minusOne()">1を引く</button>
+    </div>
+
+    <div class="main" id="options_window" hidden="hidden">
+      <div class="main_header">
+        <span>
+          <span
+            style="text-align: left; margin-right: 25%"
+            onclick="setWindowMain()"
+            >Game</span
+          ><span
+            style="text-align: right; margin-left: 25%"
+            onclick="setWindowCheatSheet()"
+            >Cheat Sheet
+          </span>
+        </span>
+      </div>
+
+      <div class="kana_frm">
+        <input
+          type="radio"
+          id="hiragana"
+          name="kana"
+          value="hiragana"
+          oninput="setHiragana()"
+          checked="checked"
+        />
+        <label for="hiragana" onclick="setHiragana()">ひらがな</label>
+
+        <br />
+
+        <input
+          type="radio"
+          id="katakana"
+          name="kana"
+          value="katakana"
+          oninput="setKatakana()"
+        />
+        <label for="katakana" onclick="setKatakana()">カタカナ</label>
+      </div>
+
+      <div class="kana_frm">
+        <input
+          type="radio"
+          id="english"
+          name="language"
+          value="english"
+          checked="checked"
+          oninput="setEnglish()"
+        />
+        <label for="english" onclick="setEnglish()">English</label>
+
+        <br />
+
+        <input
+          type="radio"
+          id="japanese"
+          name="language"
+          value="japanese"
+          oninput="setJapanese()"
+        />
+        <label for="japanese" onclick="setJapanese()"
+          >日本語 (makes the font look better)</label
+        >
+      </div>
+
+      <div class="kana_frm">
+        <input type="checkbox" id="romaji" name="romaji" />
+        <label for="romaji" id="Lromaji" onclick="toggleRomaji()"
+          >ローマ字を切り替える</label
+        >
+      </div>
+
+      <div class="kana_frm">
+        <input type="checkbox" id="toggle_hints" name="toggle_hints" />
+        <label
+          for="toggle_hints"
+          id="Ltoggle_hints"
+          onclick="toggleAlwaysHint()"
+          >常に提案</label
+        >
+      </div>
+
+      <div class="kana_frm">
+        <input
+          type="checkbox"
+          id="toggle_irregular_indicater"
+          name="toggle_irregular_indicater"
+          checked="checked"
+        />
+        <label
+          for="toggle_irregular_indicater"
+          id="Ltoggle_irregular_indicater"
+          onclick="toggleIrregualIndicater()"
+          >不規則な発音をする</label
+        >
+      </div>
+
+      <br /><br />
+
+      <button
+        type="button"
+        style="font-size: xx-large"
+        id="bReset"
+        onclick="reset()"
+      >
+        組み替える
+      </button>
+
+      <br /><br /><br />
+
+      <h2>Github: <a href=""></a></h2>
+      <h2><a href="why.html">Why?</a></h2>
+    </div>
+
+    <div class="main" id="cheat_sheet_window" hidden="hidden">
+      <div class="main_header">
+        <span>
+          <span
+            style="text-align: left; margin-right: 25%"
+            onclick="setWindowMain()"
+            >Game</span
+          ><span
+            style="text-align: right; margin-left: 25%"
+            onclick="setWindowOptions()"
+            >Options</span
+          >
+        </span>
+      </div>
+
+      <div class="cheat_sheet" id="cheat_sheet"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
