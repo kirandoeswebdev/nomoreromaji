@@ -356,7 +356,11 @@ function getHint(kana_arr, hint_element, current_kana) {
     hintText += ` ${romaji[kanaIndex]}`;
   }
 
-  hintText += language == "english" ? " - Hint" : " - 示唆";
+  console.log(hintText);
+
+  hintText = (language == "english" ? "Hint: " : "示唆: ") + hintText;
+
+  console.log(hintText);
 
   hint_element.innerHTML = hintText;
   hintElement.removeAttribute("hidden");
