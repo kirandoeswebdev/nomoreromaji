@@ -597,7 +597,7 @@ function setJapanese() {
 
   getElement("Ltoggle_irregular_indicater").innerHTML = "不規則な発音をする";
 
-  getElement("bReset").innerHTML = "Reset Score";
+  getElement("bReset").innerHTML = "組み替える";
 
   scoreElement = getElement("score");
 }
